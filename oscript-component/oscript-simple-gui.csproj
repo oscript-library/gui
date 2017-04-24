@@ -48,24 +48,39 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ScriptEngine, Version=1.0.15.260, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OneScript.1.0.15\lib\net40\ScriptEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ScriptEngine.HostedScript, Version=1.0.15.260, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OneScript.StandardLibrary.1.0.15\lib\net40\ScriptEngine.HostedScript.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="ScriptEngine">
-      <HintPath>..\packages\OneScript.1.0.13\lib\net40\ScriptEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="Ionic.Zip">
-      <HintPath>..\packages\DotNetZip.1.9.3\lib\net20\Ionic.Zip.dll</HintPath>
-    </Reference>
-    <Reference Include="ScriptEngine.HostedScript">
-      <HintPath>..\packages\OneScript.StandardLibrary.1.0.13\lib\net40\ScriptEngine.HostedScript.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileDialogMode.cs" />
+    <Compile Include="DialogReturnCodeEnum.cs" />
+    <Compile Include="QuestionDialogModeEnum.cs" />
+    <Compile Include="DataTableProvider.cs" />
     <Compile Include="FormControlDockStyle.cs" />
-    <Compile Include="FormFieldActions.cs" />
     <Compile Include="FormFieldType.cs" />
     <Compile Include="FormGroupType.cs" />
+    <Compile Include="FormTable.cs" />
+    <Compile Include="FormTableColumn.cs" />
+    <Compile Include="FormTree\FormTreeColumn.cs" />
+    <Compile Include="FormTree\FormTree.cs" />
     <Compile Include="IElementsContainer.cs" />
     <Compile Include="IFormElement.cs" />
     <Compile Include="ManagedInterface.cs" />
@@ -76,10 +91,23 @@
     <Compile Include="Elements.cs" />
     <Compile Include="FormButton.cs" />
     <Compile Include="ManagedGUI.cs" />
+    <Compile Include="FileDialog.cs" />
+    <Compile Include="StandardDialogs.cs" />
     <Compile Include="TitleLocation.cs" />
+    <Compile Include="FormTree\TreeViewColumns\TreeViewColumns.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormTree\TreeViewColumns\TreeViewColumns.Designer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormTree\TreeViewColumns\TreeViewColumns.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

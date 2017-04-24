@@ -1,7 +1,4 @@
-﻿using System;
-using ScriptEngine.Machine.Contexts;
-using ScriptEngine.Machine;
-using System.Collections.Generic;
+﻿using ScriptEngine.Machine.Contexts;
 
 namespace oscriptGUI
 {
@@ -40,14 +37,14 @@ namespace oscriptGUI
             get { return (int)EnumFormFieldType.InputField; }
         }
 
-        /// <summary>
-        /// ПолеHTMLДокумента - WebBrowser
-        /// </summary>
-        [ContextProperty("ПолеHTMLДокумента", "HTMLDocumentField")]
-        public int HTMLDocumentField
-        {
-            get { return (int)EnumFormFieldType.HTMLDocumentField; }
-        }
+        ///// <summary>
+        ///// ПолеHTMLДокумента - WebBrowser
+        ///// </summary>
+        //[ContextProperty("ПолеHTMLДокумента", "HTMLDocumentField")]
+        //public int HTMLDocumentField
+        //{
+        //    get { return (int)EnumFormFieldType.HTMLDocumentField; }
+        //}
 
         /// <summary>
         /// ProgressBar
